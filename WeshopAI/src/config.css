@@ -1,0 +1,9 @@
+.df{
+    display: flex;
+}
+.alc{
+    align-items: center;
+}
+.gap10{
+    gap: 10px;
+}

@@ -1,0 +1,34 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+.main{
+    display: flex;
+    width: 100vw;
+}
+.sidebar{
+    background: linear-gradient(to bottom, #dbf7ff, #f2fcff);
+    height: 100vh;
+    min-width:200px;
+    max-width: 200px;
+}
+.routes{
+    width: calc(100% - 200px);
+    height: 100vh;
+}
+.innercontent{
+    padding: 10px;
+
+}
+.ul{
+    list-style-type: none;
+    text-align: start;
+}
+.li{
+    padding: 5px;
+}
+.li img{
+    width: 30px;
+    vertical-align: middle;
+    border-radius: 50%;
+}
