@@ -6,7 +6,7 @@ import Login from './ViewPages/Login.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Login/>
-    {/* <App /> */}
+    {/* <Login/> */}
+    <App />
   </React.StrictMode>,
 )
