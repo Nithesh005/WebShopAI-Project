@@ -1,5 +1,9 @@
-.rightSideContent h1{
-    width: 280%;
+.rightSideContent{
+    width: 100%;
+}
+.rightSideContent .RightSideTabs{
+    width: 100%;
+    padding: 10px;
 }
 
 

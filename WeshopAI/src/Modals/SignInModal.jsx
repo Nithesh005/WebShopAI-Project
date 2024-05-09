@@ -5,9 +5,8 @@ import Modal from '@mui/material/Modal';
 import '../styles/tailwind.css';
 import GoogleSignIn from '../ThirdPartyIntegration/GoogleSignIn';
 import { IconButton, InputAdornment, TextField } from '@mui/material';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import BasicTabs from '../Components/NavigationTabs/BasicTabs';
+import BasicTabs from '../Components/NavigationTabs/LoginOptionTabs';
+import LoginOptionTabs from '../Components/NavigationTabs/LoginOptionTabs';
 
 export const style = {
     position: 'absolute',
@@ -36,10 +35,7 @@ export default function SignInModal({ open, handleClose }) {
         console.error('Login Error:', error);
         // You can handle the sign-in error here
     };
-    const [showPassword, setShowPassword] = React.useState(false);
-    const handleTogglePasswordVisibility = () => {
-        setShowPassword(!showPassword);
-    }
+
 
     return (
         <div>
@@ -51,27 +47,11 @@ export default function SignInModal({ open, handleClose }) {
                 disableAutoFocus={true}
             >
                 <Box sx={style}>
-                    {/* <BasicTabs /> */}
-                    <TextField id="outlined-basic" label="Email" variant="outlined" />
-                    <TextField type={showPassword ? 'text' : 'password'} label="password" variant="outlined"
-                        InputProps={{
-                            endAdornment: (
-                                <InputAdornment position="end">
-                                    <IconButton
-                                        aria-label="toggle password visibility"
-                                        onClick={handleTogglePasswordVisibility}
-                                        edge="end"
-                                    >
-                                        {showPassword ? <Visibility /> : <VisibilityOff />}
-                                    </IconButton>
-                                </InputAdornment>
-                            ),
-                        }}
-                    />
-                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        {/* <Button> Google Sign IN</Button> */}
-                        <GoogleSignIn onSuccess={handleSuccess} onFailure={handleFailure} />
-                    </Typography>
+                    <LoginOptionTabs page={"Loginpage"}/>
+                    <GoogleSignIn onSuccess={handleSuccess} onFailure={handleFailure} />
+                    {/* <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                        <Button> Google Sign IN</Button>
+                    </Typography> */}
                 </Box>
 
             </Modal>

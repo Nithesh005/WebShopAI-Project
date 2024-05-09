@@ -6,18 +6,32 @@ const SideBar = () => {
     return (
         <div className="sidebar">
             <div className="innercontent">
-                <img src={logo} alt="Logo" />
+                <div className="logo">
+                    <img src={logo} alt="Logo" />
+                </div>
                 <nav>
-                    <ul className='ul'>
-                        {sidebarOptions.map((option, index) => (
-                            <Link key={index} to={option.navigatePath}>
-                                <li className='li df alc gap10'>
-                                    <img src={option.imagePath} alt={option.name} />
-                                    <span>{option.name}</span>
-                                </li>
-                            </Link>
-                        ))}
-                    </ul>
+                    <div className='ul'>
+                        <div className="div1">
+                            {sidebarOptions.slice(0, -1).map((option, index) => (
+                                <Link key={index} to={option.navigatePath}>
+                                    <li className={`li df alc gap10 ${index === sidebarOptions.length - 1 && 'last-item'}`}>
+                                        <img src={option.imagePath} alt={option.name} />
+                                        <span>{option.name}</span>
+                                    </li>
+                                </Link>
+                            ))}
+                        </div>
+                        <div className="div2">
+                            {sidebarOptions.slice(-1).map((option, index) => (
+                                <Link key={index} to={option.navigatePath}>
+                                    <li className={`li df alc gap10 ${index === sidebarOptions.length - 1 && 'last-item'}`}>
+                                        <img src={option.imagePath} alt={option.name} />
+                                        <span>{option.name}</span>
+                                    </li>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
                 </nav>
             </div>
         </div>

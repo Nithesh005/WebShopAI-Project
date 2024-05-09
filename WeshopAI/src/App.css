@@ -7,10 +7,22 @@
     width: 100vw;
 }
 .sidebar{
-    background: linear-gradient(to bottom, #dbf7ff, #f2fcff);
+    background: linear-gradient(to bottom, #f1fcff, #fbfeff);
     height: 100vh;
     min-width:200px;
     max-width: 200px;
+}
+nav .ul {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: calc(100vh - 65px);
+}
+.logo{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .routes{
     width: calc(100% - 200px);
@@ -18,7 +30,7 @@
 }
 .innercontent{
     padding: 10px;
-
+    height: -webkit-fill-available;
 }
 .ul{
     list-style-type: none;

@@ -1,29 +1,24 @@
 import logs from '../assets/Images/icon1.png'
 import logs1 from '../assets/Images/icon2.png'
+import Purchace from '../assets/Images/ic_home_ai_model.webp'
 const sidebarOptions = [
     {
-        name: 'Option 1',
+        name: 'Clothing Trail',
         title: 'Title 1',
         imagePath: logs,
         navigatePath: '/page1',
     },
     {
-        name: 'Option 2',
+        name: 'Jwellery Trail',
         title: 'Title 2',
         imagePath: logs1,
         navigatePath: '/page2',
     },
     {
-        name: 'Option 3',
-        title: 'Title 3',
-        imagePath: '/path/to/image3.png',
-        navigatePath: '/option3',
-    },
-    {
-        name: 'Option 4',
-        title: 'Title 4',
-        imagePath: '/path/to/image4.png',
-        navigatePath: '/option4',
+        name: 'Purchace',
+        title: 'Title 2',
+        imagePath: Purchace,
+        navigatePath: '/page3',
     },
 ];
 

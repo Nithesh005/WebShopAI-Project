@@ -10,7 +10,7 @@ import Login from './ViewPages/Login';
 import SideBar from './Components/SideBar/SideBar';
 
 function App() {
-  const [Auth, setAuth] = useState(false); //
+  const [Auth, setAuth] = useState(true); //
   return (
     <div className="App">
       {Auth ? (

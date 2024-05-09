@@ -50,15 +50,15 @@ const Login = () => {
             </header>
             <main className='style_main__UY2kE'>
                 <div className='style_middle__A61iB'>
-                    <div className="agTitleMiddle style_title1__6Hy1F">10x Model &amp; Product Photos with</div>
+                    <div className="agTitleMiddle style_title1__6Hy1F">Code Flink</div>
                     <div className="agTitleLarge style_title2__VKdSw">AI E-Commerce Creative Studio</div>
                     <div className="ag24 style_title3__pomOe">Instantly generate high-quality images at fractional costs</div>
                     <div className="style_middleBtns__pW4Q9">
-                        <div className="ag20-t style_tryBtn__JrVsN style_middleBtn__HmRDi">
+                        {/* <div className="ag20-t style_tryBtn__JrVsN style_middleBtn__HmRDi">
                             <img alt="aimodel" loading="lazy" width="91" height="106" decoding="async" data-nimg="1" className="style_modelImage__O9KeP" src={ai_model} />
                             <p>Try for Free</p>
                             <img alt="arrow" loading="lazy" width="20" height="20" decoding="async" data-nimg="1" className="style_tryArrow__Vt4p7" src={arrow} />
-                        </div>
+                        </div> */}
                         <div className="style_playBtn__QFQqU style_middleBtn__HmRDi">
                             <img alt="play" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" src={mediaLogo} />
                             <div className="style_playText__H6n5l">
