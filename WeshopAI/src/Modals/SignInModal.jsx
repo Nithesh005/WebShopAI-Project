@@ -1,10 +1,13 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import '../styles/tailwind.css';
-import { Link, useNavigate } from 'react-router-dom';
+import GoogleSignIn from '../ThirdPartyIntegration/GoogleSignIn';
+import { IconButton, InputAdornment, TextField } from '@mui/material';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import BasicTabs from '../Components/NavigationTabs/BasicTabs';
 
 export const style = {
     position: 'absolute',
@@ -16,6 +19,7 @@ export const style = {
     //   border: '2px solid #000',
     boxShadow: 24,
     p: 4,
+    borderRadius: '10px'
 };
 
 export default function SignInModal({ open, handleClose }) {
@@ -23,6 +27,19 @@ export default function SignInModal({ open, handleClose }) {
     //   const handleOpen = () => setOpen(true);
     //   const handleClose = () => setOpen(false);
 
+    const handleSuccess = (response) => {
+        console.log('Login Success:', response);
+        // You can handle the successful sign-in here
+    };
+
+    const handleFailure = (error) => {
+        console.error('Login Error:', error);
+        // You can handle the sign-in error here
+    };
+    const [showPassword, setShowPassword] = React.useState(false);
+    const handleTogglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    }
 
     return (
         <div>
@@ -34,13 +51,29 @@ export default function SignInModal({ open, handleClose }) {
                 disableAutoFocus={true}
             >
                 <Box sx={style}>
-                    <Typography id="modal-modal-title" variant="h6" component="h2">
-                        Text in a modal
-                    </Typography>
+                    {/* <BasicTabs /> */}
+                    <TextField id="outlined-basic" label="Email" variant="outlined" />
+                    <TextField type={showPassword ? 'text' : 'password'} label="password" variant="outlined"
+                        InputProps={{
+                            endAdornment: (
+                                <InputAdornment position="end">
+                                    <IconButton
+                                        aria-label="toggle password visibility"
+                                        onClick={handleTogglePasswordVisibility}
+                                        edge="end"
+                                    >
+                                        {showPassword ? <Visibility /> : <VisibilityOff />}
+                                    </IconButton>
+                                </InputAdornment>
+                            ),
+                        }}
+                    />
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        <Button> Google Sign IN</Button>
+                        {/* <Button> Google Sign IN</Button> */}
+                        <GoogleSignIn onSuccess={handleSuccess} onFailure={handleFailure} />
                     </Typography>
                 </Box>
+
             </Modal>
         </div>
     );
