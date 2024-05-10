@@ -8,11 +8,11 @@ import Page1 from './ViewPages/Page1';
 import Page2 from './ViewPages/Page2';
 import Login from './ViewPages/Login';
 import SideBar from './Components/SideBar/SideBar';
-
+export const Context = React.createContext();
 function App() {
-  const [Auth, setAuth] = useState(true); //
+  const [Auth, setAuth] = useState(false);
   return (
-    <div className="App">
+    <Context.Provider className="App" value={[Auth, setAuth]}>
       {Auth ? (
         <Router>
           <div className='main'>
@@ -28,7 +28,7 @@ function App() {
         <Login />
       )}
 
-    </div>
+    </Context.Provider>
   );
 }
 

@@ -2,8 +2,12 @@
     /* background-color: rgb(120, 228, 57); */
     /* background: linear-gradient(to bottom, #feffdb, #fffef2); */
     /* background: linear-gradient(to bottom, rgba(255, 126, 95, 0.5), rgba(255, 214, 183, 0.5)), url('../../assets/Images/icon2.png'); */
-    width: 500px;
+    /* width: 500px; */
     height: 100vh;
     border-right: 0.5px solid rgb(237, 237, 237);
     padding: 10px;
+    position: relative;
+    width: 30%;
+    background-color: white;
+    z-index: 2;
 }

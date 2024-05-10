@@ -11,6 +11,10 @@ import SignInModal, { style } from '../Modals/SignInModal';
 import { fetchUserData } from '../Services/Api';
 import { Box, Button, Modal, Typography } from '@mui/material';
 const Login = () => {
+    const style = {
+        whiteSpace: 'nowrap',
+        cursor: 'pointer'
+    };
 
     const getUserData = async (n, endpoint) => {
         try {
@@ -32,19 +36,17 @@ const Login = () => {
 
     return (
         <div className='style_root__tHamV'>
-            <SignInModal open={open} handleClose={handleClose}/>
+            <SignInModal open={open} handleClose={handleClose} />
             <header className='style_headerFixed__DvCmD'>
                 <div className="style_nav___YelD">
-                    <div className="style_navContainer__NpEhJ style_navTransparent__o373m style_colorWhite__Z1xQp">
-                        <a href="/home">
-                            <img alt="logo" loading="lazy" width="192" height="34" decoding="async" data-nimg="1" style={{ color: 'transparent', display: 'none' }} src={darklogo} />
-                            <img alt="logo" loading="lazy" width="192" height="34" decoding="async" data-nimg="1" style={{ color: 'transparent', display: 'block' }} src={lightlogo} />
-                        </a>
+                    <div className="style_navContainer__NpEhJ style_navTransparent__o373m style_colorWhite__Z1xQp" style={style}>
+                        <img alt="logo" loading="lazy" width="192" height="34" decoding="async" data-nimg="1" style={{ color: 'transparent', display: 'none' }} src={darklogo} />
+                        <img alt="logo" loading="lazy" width="192" height="34" decoding="async" data-nimg="1" style={{ color: 'transparent', display: 'block' }} src={lightlogo} />
                         <div className="ag16-t style_startMenu__FLWuY "><p>Get Started</p><div className="style_menuIcon__fMTt_   "></div></div>
                         <div className="ag16-t style_menu__WpUKu "><p>Solutions</p><div className="style_menuIcon__fMTt_   "></div></div>
                         <div className="ag16-t style_menu__WpUKu "><p>Plans &amp; Pricing</p></div>
                         <div className="ag16-t style_menu__WpUKu "><p>Help</p><div className="style_menuIcon__fMTt_   "></div></div>
-                        <div className="ag16 style_signButton__7bxrn left_side" style={{whiteSpace:'nowrap',cursor:'pointer'}} onClick={handleOpen}>Sign In</div>
+                        <div className="ag16 style_signButton__7bxrn left_side" style={style} onClick={handleOpen}>Sign In</div>
                     </div>
                 </div>
             </header>

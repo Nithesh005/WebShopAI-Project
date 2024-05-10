@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { Button, TextField } from '@mui/material';
 import PasswordFields from '../InputFiels/PasswordFields';
+import { Context } from '../../App';
 
 function CustomTabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -55,6 +56,26 @@ export default function LoginOptionTabs({ page }) {
         setValue(newValue);
     };
 
+
+    const [username, setUsername] = React.useState('');
+    const [password, setpassword] = React.useState('');
+
+    const handleChangeUsername = (event) => {
+        setUsername(event.target.value);
+    };
+    const handleChangePassword = (event) => {
+        setpassword(event.target.value);
+    };
+    const [Auth, setAuth] = React.useContext(Context);
+    const validateLogin = () => {
+        if (username === "user@gmail.com" && password === "user123") {
+            setAuth(true);
+            // console.log(updateGrandparentState);
+        }else{
+            alert("Invalid Credentials");
+        }
+    }
+
     return (
         <Box sx={{ width: '100%' }}>
             {page == "clothing" &&
@@ -94,9 +115,12 @@ export default function LoginOptionTabs({ page }) {
                         </Box>
                         <CustomTabPanel value={value} index={0}>
                             <div className="flex flex-col gap-4">
-                                <TextField label='username' className="mb-4" />
-                                <PasswordFields />
-                                <Button>Sign IN</Button>
+                                <TextField label='username'
+                                    className="mb-4"
+                                    value={username}
+                                    onChange={handleChangeUsername} />
+                                <PasswordFields setpassword={setpassword} password={password} handleChangePassword={handleChangePassword}/>
+                                <Button onClick={validateLogin}>Sign IN</Button>
                             </div>
                         </CustomTabPanel>
                         <CustomTabPanel value={value} index={1}>
