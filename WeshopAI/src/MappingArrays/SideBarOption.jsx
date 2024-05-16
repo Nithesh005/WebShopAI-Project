@@ -14,12 +14,12 @@ const sidebarOptions = [
         imagePath: logs1,
         navigatePath: '/page2',
     },
-    {
-        name: 'Purchace',
-        title: 'Title 2',
-        imagePath: Purchace,
-        navigatePath: '/page3',
-    },
+    // {
+    //     name: 'Purchace',
+    //     title: 'Title 2',
+    //     imagePath: Purchace,
+    //     navigatePath: '/Purchase',
+    // },
 ];
 
 export default sidebarOptions;

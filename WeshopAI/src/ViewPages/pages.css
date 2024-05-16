@@ -33,7 +33,7 @@
     }
     100% {
         left: 30%;
-        width: 600px; /* End width */
+        width: 700px; /* End width */
     }
 }
 
@@ -77,8 +77,12 @@ input, p, textarea {
     margin: 0;
     padding: 0;
 }
-
-
+.imageSection{
+    padding: 1rem;
+}
+.imgsection1 , .imgsection2{
+    padding: 1rem;
+}
 
 
 /* Nav bar Style  */

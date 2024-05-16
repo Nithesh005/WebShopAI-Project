@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom';
 import logo from '../../assets/Images/logo.png';
 import sidebarOptions from '../../MappingArrays/SideBarOption'
-
+import logs from '../../assets/Images/icon1.png'
+import './style.css'
+import { useState } from 'react';
 const SideBar = () => {
+    const [activeIndex, setActiveIndex] = useState(null);
+
     return (
         <div className="sidebar">
             <div className="innercontent">
@@ -12,9 +16,9 @@ const SideBar = () => {
                 <nav>
                     <div className='ul'>
                         <div className="div1">
-                            {sidebarOptions.slice(0, -1).map((option, index) => (
+                            {sidebarOptions.map((option, index) => (
                                 <Link key={index} to={option.navigatePath}>
-                                    <li className={`li df alc gap10 ${index === sidebarOptions.length - 1 && 'last-item'}`}>
+                                    <li className={`li df alc gap10 ${index === activeIndex ? 'active' : ''}`} onClick={() => setActiveIndex(index)}>
                                         <img src={option.imagePath} alt={option.name} />
                                         <span>{option.name}</span>
                                     </li>
@@ -22,14 +26,23 @@ const SideBar = () => {
                             ))}
                         </div>
                         <div className="div2">
-                            {sidebarOptions.slice(-1).map((option, index) => (
-                                <Link key={index} to={option.navigatePath}>
-                                    <li className={`li df alc gap10 ${index === sidebarOptions.length - 1 && 'last-item'}`}>
-                                        <img src={option.imagePath} alt={option.name} />
-                                        <span>{option.name}</span>
-                                    </li>
-                                </Link>
-                            ))}
+                            <Link to='Purchase'>
+                                <li className={`li df alc gap10 ${activeIndex === 3 ? 'active' : ''}`} onClick={() => setActiveIndex(3)}>
+                                    <img src={logs} alt='image' />
+                                    <span>Purchase</span>
+                                </li>
+                            </Link>
+                            <Link to='page4'>
+                                <li className={`li df alc gap10 ${activeIndex === 4 ? 'active' : ''}`} onClick={() => setActiveIndex(4)}>
+                                    <img src={logs} alt='image' />
+                                    <span>Profile</span>
+                                    <div className="additional-options">
+                                        <p>UserName</p>
+                                        <p>Points</p>
+                                        <p>super coins</p>
+                                    </div>
+                                </li>
+                            </Link>
                         </div>
                     </div>
                 </nav>

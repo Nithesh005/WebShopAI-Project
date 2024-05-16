@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Page1DecComponent from "../Components/DecriptionComponents/Page1DecComponent";
 import LoginOptionTabs from "../Components/NavigationTabs/LoginOptionTabs";
+import ImageUpload from "../Components/UploadImage/ImageUpload";
 
 const Page2 = () => {
     const [openSideBars, setopenSideBars] = useState(false);
@@ -9,6 +10,14 @@ const Page2 = () => {
             <div className={`rightSideContent df ${openSideBars ? 'overlay' : ''}`}>
                 {openSideBars && (
                     <div className="sideBars">
+                        <div className="imageSection df">
+                            <div className="imgsection1">
+                                <ImageUpload />
+                            </div>
+                            <div className="imgsection2">
+                                <ImageUpload />
+                            </div>
+                        </div>
                         <LoginOptionTabs page={"Jwellery"} />
                         <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, sit earum illo numquam incidunt unde rem odit temporibus dolorum maiores ipsam, obcaecati delectus, officia nostrum voluptas impedit? Libero, voluptatum repellendus!</h1>
                     </div>
@@ -23,4 +32,4 @@ const Page2 = () => {
         </>
     )
 }
-export default Page2;
+export default Page2;   

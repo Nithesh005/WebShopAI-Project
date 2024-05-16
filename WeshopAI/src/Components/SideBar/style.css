@@ -1,0 +1,41 @@
+.div1 .li, .div2 .li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+/*  */
+.div1 .li:hover , .div2 .li:hover {
+    background-color: #f0f0f0; /* Change this to your desired hover color */
+}
+.div1 .li.active , .div2 .li.active {
+    background-color: #d0d0d0; /* Change this to your desired active color */
+}
+/* Style for the additional options div */
+.additional-options {
+    display: none;
+    position: absolute;
+    top: -300%;
+    left: 100%; /* Position it to the right of the li element */
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    z-index: 1; /* Ensure it appears above other elements */
+}
+
+/* Show the additional options on hover */
+.div2 .li{
+    position: relative;
+}
+.li:hover .additional-options {
+    display: block;
+}
+.additional-options p{
+    padding: 1rem;
+}
+.additional-options p:hover{
+    background-color: #f0f0f0;
+}

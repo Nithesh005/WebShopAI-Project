@@ -1,0 +1,22 @@
+.dropzone {
+    width: 300px;  /* Ensure it is a square */
+    height: 300px;  /* Ensure it is a square */
+    border: 2px dashed #cccccc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: border-color 0.3s;
+    cursor: pointer;
+}
+
+.dropzone.active {
+    border-color: #666666;
+}
+
+.dropzone p {
+    margin: 0;
+    font-size: 16px;
+    color: #666666;
+}
