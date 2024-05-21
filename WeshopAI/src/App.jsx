@@ -25,7 +25,8 @@ function App() {
           </div>
         </Router>
       ) : (
-        <Login />
+        // <Login />
+        <PlansComponent/>
       )}
 
     </Context.Provider>
